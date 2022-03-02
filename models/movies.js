@@ -23,19 +23,19 @@ const movieSchema = new mongoose.Schema({
   upState: {
     type: Boolean,
     default: false
-  },
-  // 本片有的場次
-  booking: {
-    type: [
-      {
-        bId: {
-          type: mongoose.ObjectId,
-          ref: 'bookings',
-          required: [true, '缺少場次 ID']
-        }
-      }
-    ]
   }
+  // 本片有的場次
+  // booking: {
+  //   type: [
+  //     {
+  //       bId: {
+  //         type: mongoose.ObjectId,
+  //         ref: 'bookings',
+  //         required: [true, '缺少場次 ID']
+  //       }
+  //     }
+  //   ]
+  // }
 
 })
 

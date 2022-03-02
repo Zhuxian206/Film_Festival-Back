@@ -37,18 +37,14 @@ const userSchema = new mongoose.Schema({
   cart: {
     type: [
       {
-        booking: {
+        movie: {
           type: mongoose.ObjectId,
-          ref: 'bookings',
-          required: [true, '缺少選定場次 ID']
+          ref: 'movies',
+          required: [true, '缺少電影 ID']
         },
-        // seat: {
-        //   type: [String],
-        //   required: [true, '缺少座位編號']
-        // },
         quantity: {
           type: Number,
-          required: [true, '缺少預定張數']
+          required: [true, '缺少預約張數']
         }
       }
     ]

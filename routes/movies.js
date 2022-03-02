@@ -16,7 +16,7 @@ const router = express.Router()
 
 router.post('/', auth, admin, content('multipart/form-data'), upload, create)
 router.get('/', getMovies)
-router.get('/all', getAllMovies)
+router.get('/all', auth, admin, getAllMovies)
 router.get('/:id', getMovieById)
 router.patch('/:id', auth, admin, content('multipart/form-data'), upload, updateMovieById)
 

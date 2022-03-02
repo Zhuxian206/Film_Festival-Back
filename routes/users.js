@@ -7,7 +7,10 @@ import {
   login,
   logout,
   extend,
-  getUserInfo
+  getUserInfo,
+  addCart,
+  getCart,
+  updateCart
 } from '../controllers/users.js'
 // import { RuleTester } from 'eslint'
 
@@ -23,5 +26,9 @@ router.delete('/logout', auth, logout)
 // 舊換新不能用get
 router.post('/extend', auth, extend)
 router.get('/me', auth, getUserInfo)
+
+router.post('/me/cart', auth, addCart)
+router.get('/me/cart', auth, getCart)
+router.patch('/me/cart', auth, updateCart)
 
 export default router

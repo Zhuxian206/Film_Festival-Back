@@ -1,7 +1,6 @@
 import mongoose from 'mongoose'
 
 const orderSchema = new mongoose.Schema({
-  // 誰下訂的
   user: {
     type: mongoose.ObjectId,
     ref: 'users'
@@ -9,18 +8,14 @@ const orderSchema = new mongoose.Schema({
   movies: {
     type: [
       {
-        booking: {
+        movie: {
           type: mongoose.ObjectId,
-          ref: 'bookings',
-          required: [true, '缺少影片 ID']
+          ref: 'movies',
+          required: [true, '缺少商品 ID']
         },
-        // seat: {
-        //   type: String,
-        //   required: [true, '缺少座位編號']
-        // },
         quantity: {
           type: Number,
-          required: [true, '缺少預定張數']
+          required: [true, '缺少商品數量']
         }
       }
     ]
